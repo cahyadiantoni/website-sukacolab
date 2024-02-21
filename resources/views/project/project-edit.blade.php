@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Edit Barang')
+@section('title', 'Edit Project')
 @section('content')
 
 <div class="content-wrapper">
@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/barang">Barang</a></li>
+                        <li class="breadcrumb-item"><a href="/project">Project</a></li>
                         <li class="breadcrumb-item active">@yield('title')</li>
                     </ol>
                 </div><!-- /.col -->
@@ -31,12 +31,12 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="text-right">
-                                <a href="/barang" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
+                                <a href="/project" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
                                     Back
                                 </a>
                             </div>
                         </div>
-                        <form class="needs-validation" novalidate action="/barang/{{ $barang->id_barang }}" method="POST">
+                        <form class="needs-validation" novalidate action="/project/{{ $project->id }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
@@ -44,7 +44,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name Barang" value="{{old('name', $barang->name)}}" required>
+                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name Project" value="{{old('name', $project->name)}}" required>
                                             @error('name')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -52,9 +52,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="category">Category</label>
-                                            <input type="text" name="category" class="form-control @error('category') is-invalid @enderror" id="category" placeholder="Category" value="{{old('category', $barang->category)}}" required>
-                                            @error('category')
+                                            <label for="name_project">name_project</label>
+                                            <input type="text" name="name_project" class="form-control @error('name_project') is-invalid @enderror" id="name_project" placeholder="name_project" value="{{old('name_project', $project->name_project)}}" required>
+                                            @error('name_project')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -63,18 +63,18 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="supplier">Supplier</label>
-                                            <input type="text" name="supplier" class="form-control @error('supplier') is-invalid @enderror" id="supplier" placeholder="Supplier" value="{{old('supplier', $barang->supplier)}}" required>
-                                            @error('supplier')
+                                            <label for="location">location</label>
+                                            <input type="text" name="location" class="form-control @error('location') is-invalid @enderror" id="location" placeholder="location" value="{{old('location', $project->location)}}" required>
+                                            @error('location')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="stock">Stock</label>
-                                            <input type="number" min="1" name="stock" class="form-control @error('stock') is-invalid @enderror" id="stock" placeholder="Stock" value="{{old('stock', $barang->stock)}}" required>
-                                            @error('stock')
+                                            <label for="tipe">tipe</label>
+                                            <input type="number" min="1" name="tipe" class="form-control @error('tipe') is-invalid @enderror" id="tipe" placeholder="tipe" value="{{old('tipe', $project->tipe)}}" required>
+                                            @error('tipe')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -83,18 +83,18 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="price">Price</label>
-                                            <input type="number" name="price" class="form-control @error('price') is-invalid @enderror" id="price" placeholder="Price" value="{{old('price', $barang->price)}}" required>
-                                            @error('price')
+                                            <label for="salary">salary</label>
+                                            <input type="number" name="salary" class="form-control @error('salary') is-invalid @enderror" id="salary" placeholder="salary" value="{{old('salary', $project->salary)}}" required>
+                                            @error('salary')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="note">Note</label>
-                                            <textarea name="note" id="note" class="form-control @error('note') is-invalid @enderror" cols="10" rows="5" placeholder="note">{{old('note', $barang->note)}}</textarea>
-                                            @error('note')
+                                            <label for="working_time">working_time</label>
+                                            <textarea name="working_time" id="working_time" class="form-control @error('working_time') is-invalid @enderror" cols="10" rows="5" placeholder="working_time">{{old('working_time', $project->working_time)}}</textarea>
+                                            @error('working_time')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>

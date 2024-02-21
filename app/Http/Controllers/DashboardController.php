@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barang;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index(Request $request)
     {
-        $barang = Barang::count();
+        $project = Project::count();
 
         return view('dashboard.dashboard', [
-            'barang' => $barang,
+            'project' => $project,
         ]);
     }
 }

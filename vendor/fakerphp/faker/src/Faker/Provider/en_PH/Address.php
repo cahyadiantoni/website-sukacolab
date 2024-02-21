@@ -10,7 +10,7 @@ class Address extends \Faker\Provider\en_US\Address
 
     //http://en.wikipedia.org/wiki/Postal_addresses_in_the_Philippines
     protected static $addressFormats = [
-        '{{streetAddress}}, {{barangay}}, {{city}} {{postcode}} {{province}}', '{{streetAddress}}, {{municipality}} {{postcode}} {{province}}',
+        '{{streetAddress}}, {{projectay}}, {{city}} {{postcode}} {{province}}', '{{streetAddress}}, {{municipality}} {{postcode}} {{province}}',
     ];
 
     protected static $buildingNumber = ['##A', '%#', '##A/##', '%#/%#'];
@@ -391,7 +391,7 @@ class Address extends \Faker\Provider\en_US\Address
         'Talusan', 'Titay', 'Tungawan',
     ];
 
-    protected static $barangay = [
+    protected static $projectay = [
         'Poblacion',
     ];
 
@@ -410,8 +410,8 @@ class Address extends \Faker\Provider\en_US\Address
         return static::randomElement(static::$municipality);
     }
 
-    public function barangay()
+    public function projectay()
     {
-        return static::randomElement(static::$barangay);
+        return static::randomElement(static::$projectay);
     }
 }

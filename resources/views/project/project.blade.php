@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Barang')
+@section('title', 'Project')
 @section('content')
 
     <div class="content-wrapper">
@@ -30,8 +30,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="text-right">
-                                    <a href="/barang/create" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add
-                                        Barang</a>
+                                    <a href="/project/create" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add
+                                        Project</a>
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -42,32 +42,32 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Nama</th>
-                                            <th>Category</th>
-                                            <th>Supplier</th>
-                                            <th>Stock</th>
-                                            <th>Price</th>
-                                            <th>Note</th>
+                                            <th>Projects</th>
+                                            <th>Location</th>
+                                            <th>Tipe</th>
+                                            <th>Salary</th>
+                                            <th>Time</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($barang as $data)
+                                        @foreach ($project as $data)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $data->name }}</td>
-                                                <td>{{ $data->category }}</td>
-                                                <td> {{ $data->supplier }}</td>
-                                                <td>{{ $data->stock }}</td>
-                                                <td>Rp. {{ number_format($data->price, 0) }}</td>
-                                                <td>{{ $data->note }}</td>
+                                                <td>{{ $data->name_project }}</td>
+                                                <td> {{ $data->location }}</td>
+                                                <td>{{ $data->tipe }}</td>
+                                                <td>Rp. {{ number_format($data->salary, 0) }}</td>
+                                                <td>{{ $data->working_time }}</td>
                                                 <td>
-                                                    <form class="d-inline" action="/barang/{{ $data->id_barang }}/edit"
+                                                    <form class="d-inline" action="/project/{{ $data->id }}/edit"
                                                         method="GET">
                                                         <button type="submit" class="btn btn-success btn-sm mr-1">
                                                             <i class="fa-solid fa-pen"></i> Edit
                                                         </button>
                                                     </form>
-                                                    <form class="d-inline" action="/barang/{{ $data->id_barang }}"
+                                                    <form class="d-inline" action="/project/{{ $data->id }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('delete')
