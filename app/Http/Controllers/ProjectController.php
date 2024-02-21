@@ -41,6 +41,8 @@ class ProjectController extends Controller
             'tipe' => 'required',
             'salary' => 'required',
             'working_time' => 'required',
+            'description' => 'required',
+            'requirements' => 'required',
         ]);
 
         $project = Project::create($request->all());
@@ -81,6 +83,8 @@ class ProjectController extends Controller
             'tipe' => 'required',
             'salary' => 'required',
             'working_time' => 'required',
+            'description' => 'required',
+            'requirements' => 'required',
         ]);
 
         $project = Project::findOrFail($id);

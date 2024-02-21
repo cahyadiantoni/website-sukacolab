@@ -41,12 +41,12 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Nama</th>
-                                            <th>Projects</th>
+                                            <th>Role Name</th>
+                                            <th>Project/Company</th>
                                             <th>Location</th>
                                             <th>Tipe</th>
-                                            <th>Salary</th>
-                                            <th>Time</th>
+                                            <th>Salary (Jt)</th>
+                                            <th>Time (hours/day)</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>

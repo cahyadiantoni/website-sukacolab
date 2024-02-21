@@ -43,7 +43,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="name">Name</label>
+                                            <label for="name">Role Name</label>
                                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name Project" value="{{old('name', $project->name)}}" required>
                                             @error('name')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="name_project">name_project</label>
+                                            <label for="name_project">Project / Company Name</label>
                                             <input type="text" name="name_project" class="form-control @error('name_project') is-invalid @enderror" id="name_project" placeholder="name_project" value="{{old('name_project', $project->name_project)}}" required>
                                             @error('name_project')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
@@ -63,7 +63,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="location">location</label>
+                                            <label for="location">Location</label>
                                             <input type="text" name="location" class="form-control @error('location') is-invalid @enderror" id="location" placeholder="location" value="{{old('location', $project->location)}}" required>
                                             @error('location')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
@@ -72,8 +72,14 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="tipe">tipe</label>
-                                            <input type="number" min="1" name="tipe" class="form-control @error('tipe') is-invalid @enderror" id="tipe" placeholder="tipe" value="{{old('tipe', $project->tipe)}}" required>
+                                            <label for="tipe">Tipe</label>
+                                            <select name="tipe" class="form-control @error('tipe') is-invalid @enderror" id="tipe" required>
+                                                <option value="Lain Lain">Pilih Tipe</option>
+                                                <option value="Loker" {{ old('tipe', $project->tipe) == 'Loker' ? 'selected' : '' }}>Loker</option>
+                                                <option value="Portofolio" {{ old('tipe', $project->tipe) == 'Portofolio' ? 'selected' : '' }}>Portofolio</option>
+                                                <option value="Lomba" {{ old('tipe', $project->tipe) == 'Lomba' ? 'selected' : '' }}>Lomba</option>
+                                                <option value="Lain Lain" {{ old('tipe', $project->tipe) == 'Lain Lain' ? 'selected' : '' }}>Lain Lain</option>
+                                            </select>
                                             @error('tipe')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -83,7 +89,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="salary">salary</label>
+                                            <label for="salary">Salary (Jt)</label>
                                             <input type="number" name="salary" class="form-control @error('salary') is-invalid @enderror" id="salary" placeholder="salary" value="{{old('salary', $project->salary)}}" required>
                                             @error('salary')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
@@ -92,9 +98,27 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="working_time">working_time</label>
-                                            <textarea name="working_time" id="working_time" class="form-control @error('working_time') is-invalid @enderror" cols="10" rows="5" placeholder="working_time">{{old('working_time', $project->working_time)}}</textarea>
+                                            <label for="working_time">Working Time (hours/day)</label>
+                                            <input type="number" name="working_time" class="form-control @error('working_time') is-invalid @enderror" id="working_time" placeholder="working_time" value="{{old('working_time', $project->working_time)}}" required>
                                             @error('working_time')
+                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="description">Description</label>
+                                            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" cols="10" rows="5" placeholder="description">{{old('description', $project->description)}}</textarea>
+                                            @error('description')
+                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="requirements">Requirements</label>
+                                            <textarea name="requirements" id="requirements" class="form-control @error('requirements') is-invalid @enderror" cols="10" rows="5" placeholder="requirements">{{old('requirements', $project->requirements)}}</textarea>
+                                            @error('requirements')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
